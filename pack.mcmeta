@@ -1,0 +1,10 @@
+{
+    "pack": {
+        "description": "Flirty Beta",
+        "pack_format": 75,
+        "supported_formats": [
+            75,
+            75
+        ]
+    }
+}
