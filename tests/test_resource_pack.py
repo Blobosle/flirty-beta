@@ -29,8 +29,8 @@ class ResourcePackStructureTests(unittest.TestCase):
         metadata = json.loads(read_text(PACK_META))
 
         self.assertEqual(metadata["pack"]["description"], "Flirty Beta")
-        self.assertEqual(metadata["pack"]["pack_format"], 75)
-        self.assertEqual(metadata["pack"]["supported_formats"], [75, 75])
+        self.assertEqual(metadata["pack"]["min_format"], 75)
+        self.assertEqual(metadata["pack"]["max_format"], 75)
 
     def test_lightmap_imports_flirty_beta_include(self):
         shader = read_text(LIGHTMAP_SHADER)
