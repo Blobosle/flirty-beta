@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-pack_name="flirty-beta"
+pack_name="Flirty Beta"
 repo_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 dist_dir="dist"
 dist_path="${repo_dir}/${dist_dir}"
@@ -33,7 +33,7 @@ for entry in "${versions[@]}"; do
     IFS=":" read -r version pack_format metadata_style <<< "${entry}"
 
     staging_dir="${build_dir}/${version}"
-    output="${dist_path}/${pack_name}-${version}.zip"
+    output="${dist_path}/${pack_name} ${version}.zip"
 
     rm -rf "${staging_dir}" "${output}"
     mkdir -p "${staging_dir}"
@@ -67,7 +67,7 @@ EOF
         COPYFILE_DISABLE=1 zip -r -X "${output}" pack.mcmeta pack.png assets > /dev/null
     )
 
-    echo "Built ${dist_dir}/${pack_name}-${version}.zip"
+    echo "Built ${dist_dir}/${pack_name} ${version}.zip"
 done
 
 rm -rf "${build_dir}"
